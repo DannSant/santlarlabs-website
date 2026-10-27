@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Santlar Labs website
 
-## Getting Started
+Bilingual (English / Spanish) marketing site for Santlar Labs, built with Next.js 16 and Tailwind CSS 4.
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 — you'll be redirected to `/en` or `/es` based on your browser language.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where to change things
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| What | File |
+|---|---|
+| All page text (English) | `dictionaries/en.ts` |
+| All page text (Spanish) | `dictionaries/es.ts` |
+| Email, LinkedIn, GitHub, booking link | `lib/site.ts` |
+| Colors, fonts, animations | `app/globals.css` |
+| Logo | `components/logo.tsx` and `app/icon.svg` |
 
-## Learn More
+### Adding project screenshots
 
-To learn more about Next.js, take a look at the following resources:
+1. Put the image in `public/work/`, e.g. `public/work/paureina-shop.png`.
+2. In both dictionaries, set that project's `image` to `"/work/paureina-shop.png"`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Contact form
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Without configuration the form opens the visitor's email app with the message pre-filled.
+To receive submissions directly, create a free form at https://formspree.io and set
+`NEXT_PUBLIC_FORMSPREE_ID` in your hosting environment (or `.env.local`).
 
-## Deploy on Vercel
+### Games tab
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Intentionally hidden until the Steam page for the roguelite is live.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy
+
+Push to GitHub and import the repo in Vercel. Set `NEXT_PUBLIC_SITE_URL=https://santlarlabs.com`
+and point the domain's DNS to Vercel.

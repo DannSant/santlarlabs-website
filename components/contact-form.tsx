@@ -44,7 +44,12 @@ export function ContactForm({ form, email, formspreeId }: Props) {
       const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          // Formspree uses _subject for the notification email; language tells you which to reply in.
+          _subject: `Santlar Labs — ${data.projectType} — ${data.name}`,
+          language: document.documentElement.lang === "es" ? "Español" : "English",
+        }),
       });
       setState(res.ok ? "sent" : "error");
       if (res.ok) formEl.reset();
@@ -63,6 +68,8 @@ export function ContactForm({ form, email, formspreeId }: Props) {
 
   return (
     <form onSubmit={onSubmit} className="grid gap-4 sm:grid-cols-2">
+      {/* Honeypot: hidden from people, bots fill it in and Formspree drops the submission. */}
+      <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
       <label className="grid gap-2 text-sm text-muted">
         {form.name}
         <input name="name" required autoComplete="name" className={field} />

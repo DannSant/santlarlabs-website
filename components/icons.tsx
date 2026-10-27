@@ -45,6 +45,12 @@ export const icons = {
       <path d="m4 7 8 6 8-6" />
     </svg>
   ),
+  calendar: ({ className }: IconProps) => (
+    <svg {...base} className={className}>
+      <rect x="3" y="5" width="18" height="16" rx="2.5" />
+      <path d="M3 10h18M8 3v4M16 3v4" />
+    </svg>
+  ),
   check: ({ className }: IconProps) => (
     <svg {...base} className={className}>
       <path d="m5 12.5 4.5 4.5L19 7.5" />

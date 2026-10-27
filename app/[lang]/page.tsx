@@ -27,7 +27,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
   return (
     <>
-      <SiteHeader lang={lang} nav={dict.nav} bookingUrl={site.bookingUrl} />
+      <SiteHeader lang={lang} nav={dict.nav} bookingUrl={site.bookingUrl[lang]} />
       <main>
         <Hero hero={dict.hero} />
         <Trust label={dict.trust.label} />

@@ -7,8 +7,11 @@ export const site = {
   email: "dann.santlar@gmail.com",
   linkedin: "https://www.linkedin.com/in/narciso-santiago/",
   github: "https://github.com/DannSant",
-  // e.g. a Calendly or Cal.com link. When empty, "Book a call" scrolls to the contact form.
-  bookingUrl: "",
+  // Calendly event per language. An empty value makes "Book a call" scroll to the contact form instead.
+  bookingUrl: {
+    en: "https://calendly.com/santlar-labs/discovery-call",
+    es: "https://calendly.com/santlar-labs/llamada-inicial",
+  },
   // Formspree form id (https://formspree.io). When empty, the form opens the visitor's email app instead.
   formspreeId: process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "",
 };

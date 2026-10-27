@@ -18,7 +18,13 @@ export function RevealObserver() {
       },
       { rootMargin: "0px 0px -8% 0px" },
     );
-    elements.forEach((el) => observer.observe(el));
+    elements.forEach((el) => {
+      // Anything already on screen (or every section, for very tall crawler/screenshot viewports)
+      // shows right away instead of waiting on the observer.
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) el.classList.add("is-visible");
+      else observer.observe(el);
+    });
     root.classList.add("reveal-ready");
     return () => observer.disconnect();
   }, []);

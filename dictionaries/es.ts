@@ -239,6 +239,8 @@ const es: Dictionary = {
     title: "Construyamos algo que funcione para ti",
     subtitle:
       "Cuéntame sobre tu negocio y lo que necesitas. Respondo en menos de un día hábil.",
+    bookLabel: "Agenda una llamada gratuita de 30 min",
+    bookNote: "¿Prefieres platicar? Elige el horario que te acomode.",
     emailLabel: "O escríbeme directamente",
     form: {
       name: "Nombre",
@@ -288,7 +290,7 @@ const es: Dictionary = {
       {
         title: "Quién más los trata",
         body: [
-          "No vendo ni rento tus datos. Solo los procesan los servicios que hacen funcionar este sitio: Formspree (entrega los mensajes del formulario), Vercel (hosting y estadísticas anónimas) y mi proveedor de correo. Estos servicios pueden almacenar datos en servidores ubicados en Estados Unidos.",
+          "No vendo ni rento tus datos. Solo los procesan los servicios que hacen funcionar este sitio: Formspree (entrega los mensajes del formulario), Calendly (cuando agendas una llamada), Vercel (hosting y estadísticas anónimas) y mi proveedor de correo. Estos servicios pueden almacenar datos en servidores ubicados en Estados Unidos.",
         ],
       },
       {

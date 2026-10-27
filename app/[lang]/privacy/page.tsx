@@ -42,7 +42,7 @@ export default async function PrivacyPage({ params }: PageProps<"/[lang]/privacy
 
   return (
     <>
-      <SiteHeader lang={lang} nav={dict.nav} bookingUrl={site.bookingUrl} />
+      <SiteHeader lang={lang} nav={dict.nav} bookingUrl={site.bookingUrl[lang]} />
       <main className="mx-auto max-w-3xl px-4 pb-24 pt-32 sm:px-6 sm:pt-40">
         <Link href={`/${lang}`} className="text-sm text-muted hover:text-ink">
           ← {privacy.back}

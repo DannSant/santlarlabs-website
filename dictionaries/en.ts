@@ -237,6 +237,8 @@ const en = {
     title: "Let's build something that works for you",
     subtitle:
       "Tell me about your business and what you need. I reply within one business day.",
+    bookLabel: "Book a free 30-min call",
+    bookNote: "Prefer to talk? Pick a time that works for you.",
     emailLabel: "Or email me directly",
     form: {
       name: "Name",
@@ -286,7 +288,7 @@ const en = {
       {
         title: "Who else handles it",
         body: [
-          "I do not sell or rent your information. It is processed only by the services that make this site work: Formspree (delivers contact form messages), Vercel (hosting and anonymous analytics) and my email provider. These services may store data on servers in the United States.",
+          "I do not sell or rent your information. It is processed only by the services that make this site work: Formspree (delivers contact form messages), Calendly (when you book a call), Vercel (hosting and anonymous analytics) and my email provider. These services may store data on servers in the United States.",
         ],
       },
       {

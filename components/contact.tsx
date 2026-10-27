@@ -1,11 +1,14 @@
 import type { Dictionary } from "@/dictionaries";
-import { site } from "@/lib/site";
+import { hasLocale, site } from "@/lib/site";
 import { ContactForm } from "./contact-form";
 import { icons } from "./icons";
 import { Logo } from "./logo";
 
 export function Contact({ contact, lang }: { contact: Dictionary["contact"]; lang: string }) {
   const Mail = icons.mail;
+  const Calendar = icons.calendar;
+  const Arrow = icons.arrow;
+  const bookingUrl = hasLocale(lang) ? site.bookingUrl[lang] : "";
   return (
     <section id="contact" className="relative overflow-hidden border-t border-line">
       <div className="glow pointer-events-none absolute inset-0 opacity-70" />
@@ -14,6 +17,21 @@ export function Contact({ contact, lang }: { contact: Dictionary["contact"]; lan
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-teal">{contact.eyebrow}</p>
           <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-5xl">{contact.title}</h2>
           <p className="mt-5 text-lg leading-relaxed text-muted">{contact.subtitle}</p>
+          {bookingUrl && (
+            <div className="mt-10">
+              <p className="text-sm text-faint">{contact.bookNote}</p>
+              <a
+                href={bookingUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="group mt-3 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-medium text-bg transition hover:bg-teal"
+              >
+                <Calendar className="size-4" />
+                {contact.bookLabel}
+                <Arrow className="size-4 transition-transform group-hover:translate-x-0.5" />
+              </a>
+            </div>
+          )}
           <p className="mt-10 text-sm text-faint">{contact.emailLabel}</p>
           <a
             href={`mailto:${site.email}`}

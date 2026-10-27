@@ -91,16 +91,18 @@ const es: Dictionary = {
       building: "En desarrollo",
       enterprise: "Empresarial",
     },
+    visit: "Visitar sitio",
     screenshotSoon: "Capturas próximamente",
     items: [
       {
         client: "PauReinaPolilla",
         kind: "Creadora de contenido",
-        title: "Tienda en línea para una marca de creadora en crecimiento",
-        body: "Diseñé y desarrollé la tienda donde su comunidad compra mercancía y productos, pensada para que ella misma la actualice fácilmente.",
-        tags: ["E-commerce", "Diseño responsivo", "Pagos"],
+        title: "Tienda en línea de coleccionables de videojuegos",
+        body: "Diseñé y desarrollé Polillita Shop, una tienda bilingüe de coleccionables exclusivos de videojuegos con envío a todo México, con catálogo, preventas, carrito y cuentas de cliente.",
+        tags: ["E-commerce", "Bilingüe ES/EN", "Preventas", "Cuentas de cliente"],
         status: "live",
-        image: "",
+        image: "/work/polillita-shop.webp",
+        url: "https://polillita-shop.com.mx/",
         metric: "", metricLabel: "",
       },
       {
@@ -111,6 +113,7 @@ const es: Dictionary = {
         tags: ["App web", "Automatización", "APIs"],
         status: "building",
         image: "",
+        url: "",
         metric: "", metricLabel: "",
       },
       {
@@ -121,6 +124,7 @@ const es: Dictionary = {
         tags: ["SaaS", "Automatización", "Full-stack"],
         status: "building",
         image: "",
+        url: "",
         metric: "", metricLabel: "",
       },
       {
@@ -131,6 +135,7 @@ const es: Dictionary = {
         tags: ["Java 21", "Spring Boot", "gRPC", "Kafka"],
         status: "enterprise",
         image: "",
+        url: "",
         metric: "−80–90%", metricLabel: "tiempo de respuesta",
       },
       {
@@ -141,6 +146,7 @@ const es: Dictionary = {
         tags: ["React", "TypeScript", "OpenShift", "Mapas"],
         status: "enterprise",
         image: "",
+        url: "",
         metric: "99%", metricLabel: "disponibilidad",
       },
     ],

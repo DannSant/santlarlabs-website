@@ -89,16 +89,18 @@ const en = {
       building: "In development",
       enterprise: "Enterprise",
     },
+    visit: "Visit site",
     screenshotSoon: "Screenshots coming soon",
     items: [
       {
         client: "PauReinaPolilla",
         kind: "Content creator",
-        title: "Online shop for a growing creator brand",
-        body: "Designed and built the shop where her community buys merch and products, set up to be easy for her to update on her own.",
-        tags: ["E-commerce", "Responsive design", "Payments"],
+        title: "Online shop for video game collectibles",
+        body: "Designed and built Polillita Shop, a bilingual store for exclusive video game collectibles shipped across Mexico, with a product catalog, pre-orders, cart and customer accounts.",
+        tags: ["E-commerce", "Bilingual ES/EN", "Pre-orders", "Customer accounts"],
         status: "live",
-        image: "",
+        image: "/work/polillita-shop.webp",
+        url: "https://polillita-shop.com.mx/",
         metric: "", metricLabel: "",
       },
       {
@@ -109,6 +111,7 @@ const en = {
         tags: ["Web app", "Automation", "APIs"],
         status: "building",
         image: "",
+        url: "",
         metric: "", metricLabel: "",
       },
       {
@@ -119,6 +122,7 @@ const en = {
         tags: ["SaaS", "Workflow automation", "Full-stack"],
         status: "building",
         image: "",
+        url: "",
         metric: "", metricLabel: "",
       },
       {
@@ -129,6 +133,7 @@ const en = {
         tags: ["Java 21", "Spring Boot", "gRPC", "Kafka"],
         status: "enterprise",
         image: "",
+        url: "",
         metric: "−80–90%", metricLabel: "response time",
       },
       {
@@ -139,6 +144,7 @@ const en = {
         tags: ["React", "TypeScript", "OpenShift", "Maps"],
         status: "enterprise",
         image: "",
+        url: "",
         metric: "99%", metricLabel: "uptime",
       },
     ],

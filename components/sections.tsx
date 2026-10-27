@@ -61,6 +61,7 @@ const statusStyle: Record<string, string> = {
 
 export function Work({ work }: { work: Dictionary["work"] }) {
   const ImageIcon = icons.image;
+  const Arrow = icons.arrow;
   return (
     <section id="work" className="border-y border-line bg-surface/40">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
@@ -78,7 +79,15 @@ export function Work({ work }: { work: Dictionary["work"] }) {
                 {!enterprise && (
                   <div className="relative aspect-[16/10] border-b border-line bg-gradient-to-br from-teal/10 via-surface-2 to-violet/15">
                     {item.image ? (
-                      <Image src={item.image} alt={item.title} fill className="object-cover" sizes="(min-width: 1024px) 33vw, 100vw" />
+                      <a href={item.url || undefined} target="_blank" rel="noreferrer" tabIndex={-1} className="group/shot">
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          className="object-cover object-top transition-transform duration-500 group-hover/shot:scale-[1.03]"
+                          sizes="(min-width: 1024px) 33vw, 100vw"
+                        />
+                      </a>
                     ) : (
                       <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-faint">
                         <ImageIcon className="size-7" />
@@ -111,6 +120,17 @@ export function Work({ work }: { work: Dictionary["work"] }) {
                       </li>
                     ))}
                   </ul>
+                  {item.url && (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group/link mt-5 inline-flex items-center gap-1.5 self-start text-sm font-medium text-teal hover:text-ink"
+                    >
+                      {work.visit}
+                      <Arrow className="size-4 -rotate-45 transition-transform group-hover/link:translate-x-0.5" />
+                    </a>
+                  )}
                 </div>
               </article>
             );

@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Analytics } from "@vercel/analytics/next";
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import { getDictionary } from "@/dictionaries";
 import { hasLocale, locales, site } from "@/lib/site";
@@ -51,7 +53,13 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
       lang={lang}
       className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased`}
     >
-      <body className="min-h-screen bg-bg font-sans text-ink">{children}</body>
+      <body className="min-h-screen bg-bg font-sans text-ink">
+        {children}
+        {/* Cookie-free page view stats; only reports once Web Analytics is enabled in Vercel. */}
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
+      </body>
     </html>
   );
 }

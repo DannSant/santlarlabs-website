@@ -253,11 +253,67 @@ const es: Dictionary = {
       sending: "Enviando…",
       success: "¡Gracias! Tu mensaje va en camino. Te responderé en menos de un día hábil.",
       error: "Algo salió mal. Por favor escríbeme directamente por correo.",
+      consentBefore: "Al enviar este formulario aceptas el",
+      consentLink: "aviso de privacidad",
       mailtoNote: "Se abrirá tu app de correo con el mensaje listo para enviar.",
     },
   },
+  privacy: {
+    metaTitle: "Aviso de privacidad — Santlar Labs",
+    title: "Aviso de privacidad",
+    updated: "Última actualización: 27 de octubre de 2026",
+    back: "Volver al inicio",
+    intro:
+      "Este aviso explica qué datos personales recaba Santlar Labs a través de este sitio, para qué los usa y qué opciones tienes. Está escrito en lenguaje claro y aplica a visitantes de cualquier país, incluido México conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.",
+    sections: [
+      {
+        title: "Responsable de tus datos",
+        body: [
+          "Santlar Labs es operado por Narciso Daniel Santiago Larios (\"Santlar Labs\"). Para cualquier duda o solicitud sobre privacidad, escribe a {email}.",
+        ],
+      },
+      {
+        title: "Qué datos recabo",
+        body: [
+          "Solo lo que envías en el formulario de contacto: tu nombre, correo electrónico, empresa (opcional), tipo de proyecto, presupuesto estimado, tu mensaje y la versión de idioma del sitio que usaste.",
+          "El sitio también cuenta visitas con Vercel Web Analytics. No usa cookies ni recaba información que te identifique personalmente; solo veo cifras agregadas, como visitas por página y país.",
+        ],
+      },
+      {
+        title: "Para qué los uso",
+        body: [
+          "Para responder tu solicitud, preparar una propuesta o cotización y darte seguimiento sobre el proyecto que me planteaste. No te suscribiré a boletines ni te enviaré publicidad a menos que lo pidas.",
+        ],
+      },
+      {
+        title: "Quién más los trata",
+        body: [
+          "No vendo ni rento tus datos. Solo los procesan los servicios que hacen funcionar este sitio: Formspree (entrega los mensajes del formulario), Vercel (hosting y estadísticas anónimas) y mi proveedor de correo. Estos servicios pueden almacenar datos en servidores ubicados en Estados Unidos.",
+        ],
+      },
+      {
+        title: "Cuánto tiempo los conservo",
+        body: [
+          "El tiempo necesario para responderte y, si trabajamos juntos, durante el proyecto y el periodo que exijan las obligaciones fiscales o legales. Si no iniciamos un proyecto, elimino los mensajes de contacto en un plazo máximo de 24 meses, o antes si lo solicitas.",
+        ],
+      },
+      {
+        title: "Tus derechos",
+        body: [
+          "Puedes solicitar el acceso, rectificación o cancelación de tus datos personales, oponerte a su uso o revocar tu consentimiento en cualquier momento (tus derechos ARCO). Envía tu solicitud a {email} con tu nombre y lo que deseas que haga. Responderé en un plazo máximo de 20 días hábiles.",
+        ],
+      },
+      {
+        title: "Cambios a este aviso",
+        body: [
+          "Si este aviso cambia, la versión actualizada se publicará en esta página con una nueva fecha.",
+        ],
+      },
+    ],
+  },
   footer: {
     tagline: "Software a la medida para negocios en crecimiento.",
+    privacy: "Aviso de privacidad",
     rights: "Todos los derechos reservados.",
   },
 };

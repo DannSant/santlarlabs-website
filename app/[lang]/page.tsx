@@ -36,7 +36,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <Process process={dict.process} engagement={dict.engagement} />
         <About about={dict.about} />
         <Faq faq={dict.faq} />
-        <Contact contact={dict.contact} />
+        <Contact contact={dict.contact} lang={lang} />
       </main>
       <Footer footer={dict.footer} lang={lang} />
       <RevealObserver />

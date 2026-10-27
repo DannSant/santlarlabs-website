@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Logo } from "./logo";
 
 type Props = {
@@ -23,6 +24,8 @@ export function SiteHeader({ lang, nav, bookingUrl }: Props) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const otherLang = lang === "en" ? "es" : "en";
+  // Keep the visitor on the same page when switching language, e.g. /en/privacy -> /es/privacy.
+  const switchHref = (usePathname() ?? `/${lang}`).replace(/^\/(en|es)/, `/${otherLang}`);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -32,13 +35,13 @@ export function SiteHeader({ lang, nav, bookingUrl }: Props) {
   }, []);
 
   const links = [
-    { href: "#services", label: nav.services },
-    { href: "#work", label: nav.work },
-    { href: "#process", label: nav.process },
-    { href: "#about", label: nav.about },
-    { href: "#faq", label: nav.faq },
+    { href: `/${lang}#services`, label: nav.services },
+    { href: `/${lang}#work`, label: nav.work },
+    { href: `/${lang}#process`, label: nav.process },
+    { href: `/${lang}#about`, label: nav.about },
+    { href: `/${lang}#faq`, label: nav.faq },
   ];
-  const ctaHref = bookingUrl || "#contact";
+  const ctaHref = bookingUrl || `/${lang}#contact`;
   const ctaExternal = Boolean(bookingUrl);
 
   return (
@@ -62,7 +65,7 @@ export function SiteHeader({ lang, nav, bookingUrl }: Props) {
 
         <div className="hidden items-center gap-3 md:flex">
           <Link
-            href={`/${otherLang}`}
+            href={switchHref}
             hrefLang={otherLang}
             className="rounded-full px-3 py-1.5 text-sm text-muted transition-colors hover:text-ink"
           >
@@ -118,7 +121,7 @@ export function SiteHeader({ lang, nav, bookingUrl }: Props) {
               {nav.cta}
             </a>
             <Link
-              href={`/${otherLang}`}
+              href={switchHref}
               hrefLang={otherLang}
               className="rounded-full border border-line-strong px-4 py-3 text-sm text-ink"
             >

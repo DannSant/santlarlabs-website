@@ -7,12 +7,13 @@ type Props = {
   form: Dictionary["contact"]["form"];
   email: string;
   formspreeId: string;
+  privacyHref: string;
 };
 
 const field =
   "w-full rounded-xl border border-line-strong bg-bg px-4 py-3 text-ink placeholder:text-faint outline-none transition focus:border-teal/60 focus:ring-2 focus:ring-teal/20";
 
-export function ContactForm({ form, email, formspreeId }: Props) {
+export function ContactForm({ form, email, formspreeId, privacyHref }: Props) {
   const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -102,6 +103,13 @@ export function ContactForm({ form, email, formspreeId }: Props) {
         {form.message}
         <textarea name="message" required rows={5} className={`${field} resize-y`} />
       </label>
+      <p className="text-xs text-faint sm:col-span-2">
+        {form.consentBefore}{" "}
+        <a href={privacyHref} className="text-muted underline underline-offset-2 hover:text-ink">
+          {form.consentLink}
+        </a>
+        .
+      </p>
       <div className="flex flex-col gap-3 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-faint" role={state === "error" ? "alert" : undefined}>
           {state === "error" ? <span className="text-amber">{form.error}</span> : !formspreeId && form.mailtoNote}

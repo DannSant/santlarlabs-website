@@ -251,11 +251,67 @@ const en = {
       sending: "Sending…",
       success: "Thanks! Your message is on its way. I'll get back to you within one business day.",
       error: "Something went wrong. Please email me directly instead.",
+      consentBefore: "By sending this form you agree to the",
+      consentLink: "privacy notice",
       mailtoNote: "This will open your email app with the message ready to send.",
     },
   },
+  privacy: {
+    metaTitle: "Privacy notice — Santlar Labs",
+    title: "Privacy notice",
+    updated: "Last updated: October 27, 2026",
+    back: "Back to home",
+    intro:
+      "This notice explains what personal information Santlar Labs collects through this website, why, and the choices you have. It is written in plain language and applies to visitors from any country, including Mexico under the Federal Law on the Protection of Personal Data Held by Private Parties.",
+    sections: [
+      {
+        title: "Who is responsible for your data",
+        body: [
+          "Santlar Labs is operated by Narciso Daniel Santiago Larios (\"Santlar Labs\", \"I\", \"me\"). For any privacy question or request, write to {email}.",
+        ],
+      },
+      {
+        title: "What I collect",
+        body: [
+          "Only what you send through the contact form: your name, email address, company (optional), the type of project, your estimated budget, your message, and which language version of the site you used.",
+          "The site also counts page views with Vercel Web Analytics. It does not use cookies and does not collect information that identifies you personally; I only see aggregated numbers such as visits per page and country.",
+        ],
+      },
+      {
+        title: "Why I use it",
+        body: [
+          "To answer your inquiry, prepare a proposal or quote, and keep in touch about the project you asked about. I will not add you to a newsletter or send you marketing messages unless you ask for it.",
+        ],
+      },
+      {
+        title: "Who else handles it",
+        body: [
+          "I do not sell or rent your information. It is processed only by the services that make this site work: Formspree (delivers contact form messages), Vercel (hosting and anonymous analytics) and my email provider. These services may store data on servers in the United States.",
+        ],
+      },
+      {
+        title: "How long I keep it",
+        body: [
+          "As long as needed to respond to you and, if we work together, for the duration of the project and the period required by tax or legal obligations. If we don't start a project, I delete inquiry messages within 24 months, or sooner if you ask.",
+        ],
+      },
+      {
+        title: "Your rights",
+        body: [
+          "You can ask to access, correct or delete your personal data, object to its use, or withdraw your consent at any time (in Mexico, your ARCO rights). Send your request to {email} with your name and what you would like me to do. I will reply within 20 business days.",
+        ],
+      },
+      {
+        title: "Changes to this notice",
+        body: [
+          "If this notice changes, the updated version will be published on this page with a new date.",
+        ],
+      },
+    ],
+  },
   footer: {
     tagline: "Custom software for growing businesses.",
+    privacy: "Privacy",
     rights: "All rights reserved.",
   },
 };

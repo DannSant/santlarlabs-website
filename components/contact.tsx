@@ -4,7 +4,7 @@ import { ContactForm } from "./contact-form";
 import { icons } from "./icons";
 import { Logo } from "./logo";
 
-export function Contact({ contact }: { contact: Dictionary["contact"] }) {
+export function Contact({ contact, lang }: { contact: Dictionary["contact"]; lang: string }) {
   const Mail = icons.mail;
   return (
     <section id="contact" className="relative overflow-hidden border-t border-line">
@@ -42,14 +42,20 @@ export function Contact({ contact }: { contact: Dictionary["contact"] }) {
           </div>
         </div>
         <div className="reveal ring-gradient rounded-2xl bg-surface/90 p-6 backdrop-blur sm:p-8">
-          <ContactForm form={contact.form} email={site.email} formspreeId={site.formspreeId} />
+          <ContactForm
+            form={contact.form}
+            email={site.email}
+            formspreeId={site.formspreeId}
+            privacyHref={`/${lang}/privacy`}
+          />
         </div>
       </div>
     </section>
   );
 }
 
-export function Footer({ footer, lang }: { footer: Dictionary["footer"]; lang: string }) {
+// `path` is the page below the locale ("" for home, "/privacy"), so the language link stays on the same page.
+export function Footer({ footer, lang, path = "" }: { footer: Dictionary["footer"]; lang: string; path?: string }) {
   const social = [
     { href: site.linkedin, label: "LinkedIn" },
     { href: site.github, label: "GitHub" },
@@ -68,7 +74,10 @@ export function Footer({ footer, lang }: { footer: Dictionary["footer"]; lang: s
               {s.label}
             </a>
           ))}
-          <a href={lang === "en" ? "/es" : "/en"} className="hover:text-ink">
+          <a href={`/${lang}/privacy`} className="hover:text-ink">
+            {footer.privacy}
+          </a>
+          <a href={`/${lang === "en" ? "es" : "en"}${path}`} className="hover:text-ink">
             {lang === "en" ? "Español" : "English"}
           </a>
           <span className="text-faint">

@@ -3,8 +3,8 @@ export const site = {
   name: "Santlar Labs",
   owner: "Daniel Santiago",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://santlarlabs.com",
-  // Switch to hello@santlarlabs.com once the domain's email is set up.
-  email: "dann.santlar@gmail.com",
+  // Forwarded to Gmail by Cloudflare Email Routing.
+  email: "contact@santlarlabs.com",
   linkedin: "https://www.linkedin.com/in/narciso-santiago/",
   github: "https://github.com/DannSant",
   // Calendly event per language. An empty value makes "Book a call" scroll to the contact form instead.
